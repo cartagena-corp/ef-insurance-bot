@@ -1,0 +1,9 @@
+services:
+  ef-insurance-bot:
+    build: .
+    container_name: ef-insurance-bot
+    ports:
+      - "${PORT:-8093}:${PORT:-8093}"
+    env_file:
+      - .env
+    restart: unless-stopped
